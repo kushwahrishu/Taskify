@@ -12,7 +12,7 @@ import clsx from "clsx";
 import { FaList } from "react-icons/fa";
 import UserInfo from "../UserInfo";
 import Button from "../Button";
-//import ConfirmatioDialog from "../Dialogs";
+import ConfirmatioDialog from "../Dialogs";
 
 const ICONS = {
   high: <MdKeyboardDoubleArrowUp />,
@@ -24,9 +24,9 @@ const Table = ({ tasks }) => {
   const [openDialog, setOpenDialog] = useState(false);
   const [selected, setSelected] = useState(null);
 
-  const deleteClicks = () => {
-    // setSelected(id);
-    // setOpenDialog(true);
+  const deleteClicks = (id) => {
+    setSelected(id);
+    setOpenDialog(true);
   };
 
   const deleteHandler = () => {};
@@ -137,12 +137,12 @@ const Table = ({ tasks }) => {
         </div>
       </div>
 
-      {/* TODO */}
-      {/* <ConfirmatioDialog
+      /* TODO */
+      <ConfirmatioDialog
         open={openDialog}
         setOpen={setOpenDialog}
         onClick={deleteHandler}
-      /> */}
+      /> 
     </>
   );
 };
