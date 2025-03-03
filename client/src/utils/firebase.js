@@ -7,15 +7,15 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAPiGh8_vd6codEQrhss8nJ71WCd6w94gs",
+  apiKey: import.meta.env.VITE_APP_FIREBASE_API_KEY,
   authDomain: "taskify-14207.firebaseapp.com",
   projectId: "taskify-14207",
   storageBucket: "taskify-14207.firebasestorage.app",
   messagingSenderId: "941142925187",
   appId: "1:941142925187:web:c82b21ffc536392c3ee0b6",
-  measurementId: "G-CP0WXZK8G5"
+  measurementId: "G-CP0WXZK8G5",
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);

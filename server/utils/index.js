@@ -23,6 +23,6 @@ export const createJWT = (res, userId) => {
     sameSite: "strict", //prevent CSRF attack
     maxAge: 1 * 24 * 60 * 60 * 1000, //1 day
   });
-  };
+};
 
 export default dbConnection;
