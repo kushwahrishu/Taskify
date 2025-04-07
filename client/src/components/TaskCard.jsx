@@ -27,7 +27,7 @@ const TaskCard = ({ task }) => {
 
   return (
     <>
-      <div className="w-full h-fit bg-white shadow-md p-4 rounded">
+      <div className="w-full h-fit  shadow-xl p-4 rounded  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110  ...">
         <div className="w-full flex justify-between">
           <div
             className={clsx(
@@ -39,7 +39,8 @@ const TaskCard = ({ task }) => {
             <span className="uppercase">{task?.priority} Priority</span>
           </div>
 
-          {user?.isAdmin && <TaskDialog task={task} />}
+          {/* {user?.isAdmin && <TaskDialog task={task} />} */}
+          {<TaskDialog task={task} />}
         </div>
 
         <>

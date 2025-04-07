@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // Import Link here
 import Textbox from "../components/Textbox";
 import Button from "../components/Button";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,7 +25,6 @@ const Login = () => {
   const submitHandler = async (data) => {
     try {
       const result = await login(data).unwrap();
-
       dispatch(setCredentials(result));
       navigate("/");
     } catch (error) {
@@ -45,11 +44,11 @@ const Login = () => {
         <div className="h-full w-full lg:w-2/3 flex flex-col items-center justify-center">
           <div className="w-full md:max-w-lg 2xl:max-w-3xl flex flex-col items-center justify-center gap-5 md:gap-y-10 2xl:-mt-20">
             <span className="flex gap-1 py-1 px-3 border rounded-full text-sm md:text-base bordergray-300 text-gray-600">
-              Manage all your task in one place!
+              Manage all your tasks in one place!
             </span>
             <p className="flex flex-col gap-0 md:gap-4 text-4xl md:text-6xl 2xl:text-7xl font-black text-center text-blue-700">
               <span>Productivity Management Tool</span>
-              <span className=" text-purple-700 tracking-wide italic">
+              <span className="text-purple-700 tracking-wide italic">
                 Taskify
               </span>
             </p>
@@ -71,7 +70,7 @@ const Login = () => {
                 Welcome back!
               </p>
               <p className="text-center text-base text-gray-700 ">
-                Keep all your credential safge.
+                Keep all your credentials safe.
               </p>
             </div>
 
@@ -99,9 +98,6 @@ const Login = () => {
                 error={errors.password ? errors.password.message : ""}
               />
 
-              <span className="text-sm text-gray-500 hover:text-blue-600 hover:underline cursor-pointer">
-                Forget Password?
-              </span>
               {isLoading ? (
                 <Loading />
               ) : (
@@ -111,6 +107,19 @@ const Login = () => {
                   className="w-full h-10 bg-blue-700 text-white rounded-full"
                 />
               )}
+
+              {/* Link to Registration Page */}
+              <div className="flex justify-center mt-4">
+                <p className="text-sm text-gray-800">
+                  Don't have an account?{" "}
+                  <Link
+                    to="/register"
+                    className="text-blue-800 hover:underline"
+                  >
+                    Register Here
+                  </Link>
+                </p>
+              </div>
             </div>
           </form>
         </div>
