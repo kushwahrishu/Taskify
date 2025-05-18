@@ -11,8 +11,8 @@ dotenv.config();
 
 dbConnection();
 
- //const PORT = process.env.PORT || 5000;
- const PORT = 'taskify-client-ozqo.onrender.com'
+ const PORT = process.env.PORT || 5000;
+
 
 
 const app = express();
