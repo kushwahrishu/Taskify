@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { setOpenSidebar } from "../redux/slices/authSlice";
 import clsx from "clsx";
+import Support from "./Support";
 
 const linkData = [
   {
@@ -58,7 +59,7 @@ const Sidebar = () => {
 
   const path = location.pathname.split("/")[1];
 
-  const sidebarLinks = user?.isAdmin ? linkData : linkData.slice(0, 5) ;
+  const sidebarLinks = user?.isAdmin ? linkData : linkData.slice(0, 5);
 
   const closeSidebar = () => {
     dispatch(setOpenSidebar(false));
@@ -95,10 +96,21 @@ const Sidebar = () => {
       </div>
 
       <div className="">
-        <button className="w-full flex gap-2 p-2 items-center text-lg text-gray-800">
+        {/* <button className="w-full flex gap-2 p-2 items-center text-lg text-gray-800">
           <MdSettings />
-          <span>Settings</span>
-        </button>
+          <span>
+            <Support />
+          </span>
+        </button> */}
+        <Link
+  to="/support"
+  onClick={closeSidebar}
+  className="w-full flex gap-2 p-2 items-center text-lg text-gray-800 hover:bg-[#2564ed2d] rounded-full"
+>
+  <MdSettings />
+  <span className="hover:text-[#2564ed]">Support</span>
+</Link>
+
       </div>
     </div>
   );

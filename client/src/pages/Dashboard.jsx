@@ -184,16 +184,16 @@ const Dashboard = () => {
     {
       _id: "4",
       label: "TO-DO'S",
-      total: totals["todo"] || 0 ,
+      total: totals["todo"] || 0,
       icon: <FaArrowsToDot />,
-      bg: "bg-[#be185d]" ,
+      bg: "bg-[#be185d]",
     },
   ];
 
   const Card = ({ label, count, bg, icon }) => {
     return (
       // <div className="w-full h-32 bg-white p-5 shadow-md rounded-md flex items-center justify-between">
-      <div className="w-full h-32  p-5 shadow-md rounded-md flex items-center justify-between bg-blue-400 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 ...">
+      <div className="w-full h-32  p-5 shadow-md rounded-md flex items-center justify-between bg-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110  ...">
         <div className="h-full flex flex-1 flex-col justify-between">
           <p className="text-base text-grey-800 font-bold">{label}</p>
           <span className="text-2xl font-bold text-black">{count}</span>

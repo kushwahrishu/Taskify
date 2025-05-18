@@ -15,6 +15,11 @@ import Users from "./pages/Users";
 import Dashboard from "./pages/Dashboard";
 import { setOpenSidebar } from "./redux/slices/authSlice";
 import Register from "./pages/Register";
+import LandingPage from "./pages/LandingPage";
+import Features from "./pages/Features";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Support from "./components/Support";
 
 function Layout() {
   const { user } = useSelector((state) => state.auth);
@@ -38,7 +43,8 @@ function Layout() {
       </div>
     </div>
   ) : (
-    <Navigate to="/log-in" state={{ from: location }} replace />
+    // <Navigate to="/log-in" state={{ from: location }} replace />
+    <Navigate to="/landing-page" />
   );
 }
 
@@ -105,9 +111,19 @@ function App() {
           <Route path="/todo/:status" element={<Tasks />} />
           <Route path="/team" element={<Users />} />
           <Route path="/trashed" element={<Trash />} />
+          
+
+
+<Route path="/support" element={<Support/>} />
+
           <Route path="/task/:id" element={<TaskDetails />} />
         </Route>
 
+        <Route path="/landing-page" element={<LandingPage />} />
+
+        <Route path="/features" element={<Features />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/log-in" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
