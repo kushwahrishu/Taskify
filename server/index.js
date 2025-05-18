@@ -19,7 +19,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'https://taskify-client-ozqo.onrender.com',
+    origin: ["http://localhost:3000", "http://localhost:3001"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
