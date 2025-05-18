@@ -11,13 +11,14 @@ dotenv.config();
 
 dbConnection();
 
-const PORT = process.env.PORT || 5000;
+ const PORT = process.env.PORT || 5000;
+
 
 const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: 'https://taskify-client-ozqo.onrender.com',
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
